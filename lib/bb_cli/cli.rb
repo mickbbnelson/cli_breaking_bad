@@ -14,9 +14,9 @@ class CLI   #Building out a CLI class to test along the way.
     def menu        
         decision = input
         if decision == "y"
-            puts "test language"
+            person_list
         elsif decision == "exit"
-            puts "test language 2"
+            exit_message
         else
             invalid
         end
@@ -26,5 +26,15 @@ class CLI   #Building out a CLI class to test along the way.
         puts "Invalid selection, please type y for yes or exit to exit"
     end
 
+    def exit_message
+        puts "Thank you.  Have a nice day!"
+    end
+
+    def person_list
+        people = ["person1", "person2", "person3"]
+        people.each.with_index(1) do |person, index|
+            puts "#{index}. #{person}"
+        end
+    end
 
 end
