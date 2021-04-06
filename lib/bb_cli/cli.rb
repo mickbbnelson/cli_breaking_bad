@@ -15,6 +15,7 @@ class CLI   #Building out a CLI class to test along the way.
         decision = input
         if decision == "y"
             person_list
+            menu
         elsif decision == "exit"
             exit_message
         else
@@ -24,6 +25,7 @@ class CLI   #Building out a CLI class to test along the way.
 
     def invalid
         puts "Invalid selection, please type y for yes or exit to exit"
+        menu
     end
 
     def exit_message
@@ -35,6 +37,13 @@ class CLI   #Building out a CLI class to test along the way.
         people.each.with_index(1) do |person, index|
             puts "#{index}. #{person}"
         end
+        choose_person
+    end
+
+    def choose_person
+        puts "Enter the number of the person on the list to read their profile"
+        person_choice = input
+        puts "test"
     end
 
 end
