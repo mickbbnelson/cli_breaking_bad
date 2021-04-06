@@ -43,7 +43,11 @@ class CLI   #Building out a CLI class to test along the way.
     def choose_person
         puts "Enter the number of the person on the list to read their profile"
         person_choice = input
-        puts "test"
+        person_details(person_choice)          #passes the user coice in as an arguement 
+    end
+
+    def person_details(person)                  #input variable passed in as the argument
+        puts "#{choice}"
     end
 
 end
