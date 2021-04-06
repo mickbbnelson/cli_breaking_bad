@@ -1,4 +1,4 @@
-class Person        #building out the base of my Person class.
+class Person    #buiding out the base of the Person class
     attr_accessor :name, :nickname, :occupation, :status
 
     @@all = []
@@ -12,7 +12,7 @@ class Person        #building out the base of my Person class.
     end
 
     def self.all
-        @@all
+        @all
     end
 
     def save
