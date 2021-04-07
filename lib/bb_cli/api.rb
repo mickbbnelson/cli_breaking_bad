@@ -4,11 +4,9 @@ class API      #Build out rough api
         person_array = JSON.parse(data_response)                #makes the response dat look nice and sets it to a variable that we can iterate through
         person_array.each do |peeps|
             Person.new(peeps)
-        
         end
-        binding.pry
     end                      
     
 end
 
-                                    #:name, :nickname, :occupation, :status
+                                    

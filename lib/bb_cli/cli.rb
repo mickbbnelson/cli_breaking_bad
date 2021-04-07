@@ -34,9 +34,8 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def person_list
-        people = ["person1", "person2", "person3"]
-        people.each.with_index(1) do |person, index|
-            puts "#{index}. #{person}"
+        Person.all.each.with_index(1) do |person, index|
+            puts "#{index}. #{person.name}"             #returns a list of objects until you call name in the interpolation
         end
         choose_person
     end
@@ -48,7 +47,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def person_details(person)                  #input variable passed in as the argument
-        puts "#{choice}"
+        puts "#{person}"
     end
 
 end
