@@ -3,12 +3,11 @@ class Person    #buiding out the base of the Person class
 
     @@all = []
 
-    def initialize(name, nickname, occupation, status)
-        @name = name
-        @nickname = nickname
-        @occupation = occupation
-        @status = status
-        save
+    def initialize(people_hash)
+        people_hash.each do |key, value|
+            self.send("#{key}=", value) if self.respond_to?("#{key}=")                                 #self refers to the instantiated object in initialize methods.
+        end
+            save
     end
 
     def self.all
