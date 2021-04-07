@@ -14,7 +14,7 @@ class CLI   #Building out a CLI class to test along the way.
 
     def menu        
         decision = input
-        if decision == "yes" || "list"
+        if decision == "yes" || decision == "list"
             person_list
             menu
         elsif decision == "exit"
@@ -25,7 +25,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def invalid
-        puts "Invalid selection, please type yes for yes or exit to exit"
+        puts "Invalid selection, please type list to see a list of individuals or type exit to exit"
         menu
     end
 
@@ -42,20 +42,28 @@ class CLI   #Building out a CLI class to test along the way.
 
     def choose_person
         puts "Enter the name of the person on the list to read their profile"
-        person_choice = input                  
-        person = Person.find(person_choice)   
-        person_details(person)    
-        end
+        person_choice = input 
+        if Person.find(person_choice)                
+            person = Person.find(person_choice)
+        elsif person_choice == "exit"
+            exit_message
+        else
+            invalid
+        end 
+        person_details(person)   
+    end
 
     def person_details(person)                  #person object passed in as the argument when called in the choose_person
+        puts ""
         puts "------------------------------------------------------------------"
-        puts "PROFILE:"
+        puts "PROFILE"
         puts "Name: #{person.name}"
         puts "Nickname: #{person.nickname}"
         puts "Occupation: #{person.occupation}"
         puts "Status: #{person.status}"
         puts "Image: #{person.img}"
         puts "------------------------------------------------------------------"
+        puts ""
         puts "type list to go back to the list of individuals, type exit to exit"
     end
 
