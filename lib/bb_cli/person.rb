@@ -18,7 +18,7 @@ class Person    #buiding out the base of the Person class
         @@all << self
     end
 
-    def self.find(input)        
+    def self.find(input)                    #takes in the users input and finds a match
         self.all.detect do |person|
             person.name == input
         end

@@ -4,17 +4,17 @@ class CLI   #Building out a CLI class to test along the way.
         API.get_data
         puts "Welcome to the Braking Bad ID application!  
         Would you like to see a list of individuals involved in the case?
-        Type y for yes, type exit to exit."
+        Type yes to see list, type exit to exit."
         menu
     end
 
     def input
-        gets.strip          #collects users input
+        gets.strip         
     end
 
     def menu        
         decision = input
-        if decision == "y"
+        if decision == "yes" || "list"
             person_list
             menu
         elsif decision == "exit"
@@ -25,12 +25,12 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def invalid
-        puts "Invalid selection, please type y for yes or exit to exit"
+        puts "Invalid selection, please type yes for yes or exit to exit"
         menu
     end
 
     def exit_message
-        puts "Thank you.  Have a nice day!"
+        puts "Thank you. Have a nice day!"
     end
 
     def person_list
@@ -41,13 +41,22 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def choose_person
-        puts "Enter the number of the person on the list to read their profile"
-        person_choice = input
-        person_details(person_choice)          #passes the user coice in as an arguement 
-    end
+        puts "Enter the name of the person on the list to read their profile"
+        person_choice = input                  
+        person = Person.find(person_choice)   
+        person_details(person)    
+        end
 
-    def person_details(person)                  #input variable passed in as the argument
-        puts "#{person}"
+    def person_details(person)                  #person object passed in as the argument when called in the choose_person
+        puts "------------------------------------------------------------------"
+        puts "PROFILE:"
+        puts "Name: #{person.name}"
+        puts "Nickname: #{person.nickname}"
+        puts "Occupation: #{person.occupation}"
+        puts "Status: #{person.status}"
+        puts "Image: #{person.img}"
+        puts "------------------------------------------------------------------"
+        puts "type list to go back to the list of individuals, type exit to exit"
     end
 
 end
