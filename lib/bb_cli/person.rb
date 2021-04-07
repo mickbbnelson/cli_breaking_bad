@@ -1,5 +1,5 @@
 class Person    #buiding out the base of the Person class
-    attr_accessor :name, :nickname, :occupation, :status
+    attr_accessor :name, :nickname, :occupation, :status, :img
 
     @@all = []
 
