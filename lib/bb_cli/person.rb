@@ -5,7 +5,7 @@ class Person    #buiding out the base of the Person class
 
     def initialize(people_hash)
         people_hash.each do |key, value|
-            self.send("#{key}=", value) if self.respond_to?("#{key}=")                                 #self refers to the instantiated object in initialize methods.
+            self.send("#{key}=", value) if self.respond_to?("#{key}=")     #self refers to the instantiated object in initialize methods.
         end
             save
     end
