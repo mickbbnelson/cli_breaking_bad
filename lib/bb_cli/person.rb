@@ -12,7 +12,7 @@ class Person    #buiding out the base of the Person class
     end
 
     def self.all
-        @all
+        @@all
     end
 
     def save

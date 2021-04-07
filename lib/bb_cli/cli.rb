@@ -1,6 +1,7 @@
 class CLI   #Building out a CLI class to test along the way.
 
     def welcome
+        API.get_data
         puts "Welcome to the Braking Bad ID application!  
         Would you like to see a list of individuals involved in the case?
         Type y for yes, type exit to exit."
