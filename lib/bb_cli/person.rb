@@ -21,6 +21,7 @@ class Person    #buiding out the base of the Person class
     def self.find(input)        
         self.all.detect do |person|
             person.name == input
+        end
     end
 
 end
