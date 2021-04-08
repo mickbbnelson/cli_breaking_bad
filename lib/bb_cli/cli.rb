@@ -16,7 +16,6 @@ class CLI   #Building out a CLI class to test along the way.
         decision = input
         if decision == "yes" || decision == "list"
             person_list
-            menu
         elsif decision == "exit"
             exit_message
         else
@@ -45,12 +44,12 @@ class CLI   #Building out a CLI class to test along the way.
         person_choice = input 
         if Person.find(person_choice)                
             person = Person.find(person_choice)
+            person_details(person) 
         elsif person_choice == "exit"
             exit_message
         else
             invalid
-        end 
-        person_details(person)   
+        end  
     end
 
     def person_details(person)                  #person object passed in as the argument when called in the choose_person
@@ -65,6 +64,7 @@ class CLI   #Building out a CLI class to test along the way.
         puts "------------------------------------------------------------------"
         puts ""
         puts "type list to go back to the list of individuals, type exit to exit"
+        menu
     end
 
 end
