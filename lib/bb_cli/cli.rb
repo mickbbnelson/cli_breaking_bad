@@ -2,9 +2,9 @@ class CLI   #Building out a CLI class to test along the way.
 
     def welcome
         API.get_data
-        puts "Welcome to the Braking Bad ID application!  
-        Would you like to see a list of individuals involved in the case?
-        Type yes to see list, type exit to exit."
+        puts "Welcome to the Braking Bad ID application!"  
+        puts "Would you like to see a list of individuals involved in the case?"
+        puts "Type yes to see list, type exit to exit."
         menu
     end
 
@@ -14,9 +14,9 @@ class CLI   #Building out a CLI class to test along the way.
 
     def menu        
         decision = input
-        if decision == "yes" || decision == "list"
+        if decision.downcase == "yes" || decision == "list" 
             person_list
-        elsif decision == "exit"
+        elsif decision.downcase == "exit"
             exit_message
         else
             invalid
@@ -40,7 +40,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def choose_person
-        puts "Enter the name of the person on the list to read their profile"
+        puts "Enter the name of the individual on the list to read their profile"
         person_choice = input 
         if Person.find(person_choice)                
             person = Person.find(person_choice)
@@ -63,7 +63,7 @@ class CLI   #Building out a CLI class to test along the way.
         puts "Image: #{person.img}"
         puts "------------------------------------------------------------------"
         puts ""
-        puts "type list to go back to the list of individuals, type exit to exit"
+        puts "type list to go back to the list of individuals, type exit to exit."
         menu
     end
 
