@@ -58,7 +58,7 @@ class CLI   #Building out a CLI class to test along the way.
     def person_details(person)                  #person object passed in as the argument when called in the choose_person
         puts ""
         puts "------------------------------------------------------------------"
-        puts "PROFILE"
+        puts "PROFILE".colorize(:blue)
         puts "Name: #{person.name}"
         puts "Nickname: #{person.nickname}"
         puts "Occupation: #{person.occupation}"
