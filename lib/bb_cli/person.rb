@@ -3,10 +3,10 @@ class Person    #buiding out the base of the Person class
 
     @@all = []
 
-    def initialize(people_hash)
-        people_hash.each do |key, value|
+    def initialize(person_hash)
+        person_hash.each do |key, value|
             self.class.attr_accessor(key)
-            self.send("#{key}=", value) if self.respond_to?("#{key}=")    
+            self.send("#{key}=", value) if self.respond_to?("#{key}=")  
         end
             save
     end
@@ -23,6 +23,16 @@ class Person    #buiding out the base of the Person class
         self.all.detect do |person|
             person.name.downcase == input.downcase
         end
+    end
+
+    def self.find_by_index(input)
+        person_result = ""
+        self.all.each.with_index(1) do |person, index|
+          if index == input.to_i
+            person_result = person
+          end
+        end
+        person_result
     end
 
 end

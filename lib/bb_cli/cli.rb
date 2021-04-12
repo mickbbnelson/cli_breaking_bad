@@ -45,6 +45,9 @@ class CLI   #Building out a CLI class to test along the way.
         if Person.find(person_choice)                
             person = Person.find(person_choice)
             person_details(person) 
+        elsif Person.find_by_index(person_choice)
+            person = Person.find_by_index(person_choice)
+            person_details(person)
         elsif person_choice == "exit"
             exit_message
         else
