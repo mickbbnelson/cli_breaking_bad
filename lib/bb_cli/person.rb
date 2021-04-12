@@ -26,13 +26,9 @@ class Person    #buiding out the base of the Person class
     end
 
     def self.find_by_index(input)
-        person_result = ""
-        self.all.each.with_index(1) do |person, index|
-          if index == input.to_i
-            person_result = person
-          end
+        self.all.detect.with_index(1) do |person, index|
+          index == input.to_i
         end
-        person_result
     end
 
 end

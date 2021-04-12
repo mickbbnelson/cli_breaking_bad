@@ -14,7 +14,7 @@ class CLI   #Building out a CLI class to test along the way.
 
     def menu        
         decision = input
-        if decision.downcase == "yes" || decision == "list" 
+        if decision.downcase == "yes" || decision == "list" || decision == "y"
             person_list
         elsif decision.downcase == "exit"
             exit_message
