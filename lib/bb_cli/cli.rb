@@ -2,9 +2,9 @@ class CLI   #Building out a CLI class to test along the way.
 
     def welcome
         API.get_data
-        puts "Welcome to the Braking Bad ID application!"  
-        puts "Would you like to see a list of individuals involved in the case?"
-        puts "Type yes to see list, type exit to exit."
+        puts "Welcome to the Braking Bad ID application!".colorize(:red)
+        puts "Would you like to see a list of individuals involved in the case?".colorize(:red)
+        puts "Type yes to see list, type exit to exit.".colorize(:red)
         menu
     end
 
@@ -16,7 +16,7 @@ class CLI   #Building out a CLI class to test along the way.
         decision = input
         if decision.downcase == "yes" || decision == "list" || decision == "y"
             person_list
-        elsif decision.downcase == "exit"
+        elsif decision.downcase == "exit" 
             exit_message
         else
             invalid
@@ -34,7 +34,7 @@ class CLI   #Building out a CLI class to test along the way.
 
     def person_list
         Person.all.each.with_index(1) do |person, index|
-            puts "#{index}. #{person.name}"             #returns a list of objects until you call name in the interpolation
+            puts "#{index}. #{person.name}".colorize(:red)           #returns a list of objects until you call name in the interpolation
         end
         choose_person
     end
@@ -58,12 +58,12 @@ class CLI   #Building out a CLI class to test along the way.
     def person_details(person)                  #person object passed in as the argument when called in the choose_person
         puts ""
         puts "------------------------------------------------------------------"
-        puts "PROFILE".colorize(:blue)
-        puts "Name: #{person.name}"
-        puts "Nickname: #{person.nickname}"
-        puts "Occupation: #{person.occupation}"
-        puts "Status: #{person.status}"
-        puts "Image: #{person.img}"
+        puts "PROFILE".colorize(:red)
+        puts "Name: #{person.name}".colorize(:red)
+        puts "Nickname: #{person.nickname}".colorize(:red)
+        puts "Occupation: #{person.occupation}".colorize(:red)
+        puts "Status: #{person.status}".colorize(:red)
+        puts "Image: #{person.img}".colorize(:red)
         puts "------------------------------------------------------------------"
         puts ""
         puts "type list to go back to the list of individuals, type exit to exit."
