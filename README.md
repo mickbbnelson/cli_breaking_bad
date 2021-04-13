@@ -1,28 +1,24 @@
-# Bb::Cli
+# Breaking Bad CLI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bb/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Breaking Bad Character Search Application!  This CLI application will allow you to access information about 62 Breaking Bad characters.  Once you are done reading about a certain character, you can return to the list and select another character to learn more about.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Once you have cloned the repositry, you will need to run "bundle install" to download all of the necessary gems the application is dependenrt on.
 
-```ruby
-gem 'bb-cli'
-```
+    bundle install
 
-And then execute:
+The you will need to run the application using the following code
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install bb-cli
+    ruby bin/run
 
 ## Usage
 
-TODO: Write usage instructions here
+Once you run the application, you will be greeted with a welcome message.  This message will ask if you to type "yes" to see a list of characters or to type "exit" to exit the application.
+
+After typing "yes" you will be presented with a list of 62 Breaking Bad characters to select from to view their profile.
+
+After a characters info has been pulled up, you will be asked to either type "list" to see the list again or type "exit" to exit the application.
 
 ## Development
 
