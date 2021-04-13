@@ -41,7 +41,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def choose_person
-        puts "Enter the name of the individual on the list to read their profile"
+        puts "Enter the name or number of the individual on the list to read their profile"
         person_choice = input 
         if Person.find(person_choice)                
             person = Person.find(person_choice)
@@ -72,7 +72,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def chemistry_image
-        puts <<-'EOF'
+        puts <<-'EOF'.colorize(:green)
 
             o  .      
         . .  .      )
