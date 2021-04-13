@@ -3,8 +3,8 @@ class CLI   #Building out a CLI class to test along the way.
     def welcome
         chemistry_image
         API.get_data
-        puts "Welcome to the Braking Bad ID application!".colorize(:red)
-        puts "Would you like to see a list of individuals involved in the case?".colorize(:red)
+        puts "Welcome to the Braking Bad Character application!".colorize(:red)
+        puts "Would you like to see a list of Breaking Bad characters?".colorize(:red)
         puts "Type yes to see list, type exit to exit.".colorize(:red)
         menu
     end
@@ -41,7 +41,7 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def choose_person
-        puts "Enter the name or number of the individual on the list to read their profile"
+        puts "Enter the name or number of the character on the list to read their profile"
         person_choice = input 
         if Person.find(person_choice)                
             person = Person.find(person_choice)
@@ -67,7 +67,7 @@ class CLI   #Building out a CLI class to test along the way.
         puts "Image: #{person.img}".colorize(:red)
         puts "------------------------------------------------------------------"
         puts ""
-        puts "type list to go back to the list of individuals, type exit to exit."
+        puts "type list to go back to the list of characters, type exit to exit."
         menu
     end
 

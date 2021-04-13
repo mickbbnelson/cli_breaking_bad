@@ -1,6 +1,5 @@
-class Person    #buiding out the base of the Person class
-    #attr_accessor :name, :nickname, :occupation, :status, :img 
-
+class Person   
+    
     @@all = []
 
     def initialize(person_hash)
@@ -19,7 +18,7 @@ class Person    #buiding out the base of the Person class
         @@all << self
     end
 
-    def self.find(input)                    #takes in the users input and finds a match
+    def self.find(input)                    
         self.all.detect do |person|
             person.name.downcase == input.downcase
         end
@@ -30,5 +29,4 @@ class Person    #buiding out the base of the Person class
           index == input.to_i
         end
     end
-
 end
