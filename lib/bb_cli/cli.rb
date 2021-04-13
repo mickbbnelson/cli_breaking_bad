@@ -17,7 +17,7 @@ class CLI   #Building out a CLI class to test along the way.
         decision = input
         if decision.downcase == "yes" || decision == "list" || decision == "y"
             person_list
-        elsif decision.downcase == "exit" 
+        elsif decision.downcase == "exit" || "exit!"
             exit_message
         else
             invalid
@@ -49,7 +49,7 @@ class CLI   #Building out a CLI class to test along the way.
         elsif Person.find_by_index(person_choice)
             person = Person.find_by_index(person_choice)
             person_details(person)
-        elsif person_choice == "exit"
+        elsif person_choice == "exit" || person_choice == "exit!"
             exit_message
         else
             invalid
