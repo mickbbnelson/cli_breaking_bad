@@ -1,6 +1,7 @@
 class CLI   #Building out a CLI class to test along the way.
 
     def welcome
+        chemistry_image
         API.get_data
         puts "Welcome to the Braking Bad ID application!".colorize(:red)
         puts "Would you like to see a list of individuals involved in the case?".colorize(:red)
@@ -68,6 +69,32 @@ class CLI   #Building out a CLI class to test along the way.
         puts ""
         puts "type list to go back to the list of individuals, type exit to exit."
         menu
+    end
+
+    def chemistry_image
+        puts <<-'EOF'
+
+            o  .      
+        . .  .      )
+         . O o .   (   
+       .  o  .      )
+         o O.      (
+         . o O     |/|
+         ___o_    /,,|
+         | O |   |,,,|
+         |o .|   | ,,|
+         | .o|   | , |
+         |O  |   | , |
+         | .O|   |   |
+       __|o .|__ |   |
+      / . O o  o\|   |
+     /. O .o .O .\   |
+    |^^^^^^^^^^^^^|  |
+    |             |__|_
+     \           /======
+      \_________/
+      
+      EOF
     end
 
 end
