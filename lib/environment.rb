@@ -4,7 +4,7 @@
 #require "pry"
 
 require "bundler"          
-Bundler.require         #these two lines of code allow us to require everthing in our gem file
+Bundler.require       
 
 require_all "./lib/bb_cli"
 

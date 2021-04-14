@@ -1,11 +1,11 @@
-class CLI   #Building out a CLI class to test along the way.
+class CLI  
 
     def welcome
         chemistry_image
         API.get_data
-        puts "Welcome to the Braking Bad Character application!".colorize(:red)
-        puts "Would you like to see a list of Breaking Bad characters?".colorize(:red)
-        puts "Type yes to see list, type exit to exit.".colorize(:red)
+        puts "Welcome to the Braking Bad Character Application!".colorize(:red)
+        puts "Would you like to see a list of characters Breaking Bad?".colorize(:red)
+        puts "Type 'yes' to see list, type 'exit' to exit.".colorize(:red)
         menu
     end
 
@@ -17,7 +17,7 @@ class CLI   #Building out a CLI class to test along the way.
         decision = input
         if decision.downcase == "yes" || decision == "list" || decision == "y"
             person_list
-        elsif decision.downcase == "exit" || "exit!"
+        elsif decision.downcase == "exit" || decision.downcase == "exit!"
             exit_message
         else
             invalid
@@ -25,22 +25,27 @@ class CLI   #Building out a CLI class to test along the way.
     end
 
     def invalid
-        puts "Invalid selection, please type list to see a list of individuals or type exit to exit"
+        puts "Invalid selection, please type 'list' to see a list of individuals or type 'exit' to exit"
         menu
     end
 
     def exit_message
-        puts "Thank you. Have a nice day!"
+        puts ""
+        puts "Thank you. And remember, if you're ever in legal trouble, you better call Saul!"
+        puts ""
     end
 
     def person_list
         Person.all.each.with_index(1) do |person, index|
-            puts "#{index}. #{person.name}".colorize(:red)           #returns a list of objects until you call name in the interpolation
+            puts "#{index}. #{person.name}".colorize(:red)          
         end
         choose_person
     end
 
     def choose_person
+        puts ""
+        puts "'Say my name' - Walter White"
+        puts ""
         puts "Enter the name or number of the character on the list to read their profile"
         person_choice = input 
         if Person.find(person_choice)                
@@ -56,7 +61,7 @@ class CLI   #Building out a CLI class to test along the way.
         end  
     end
 
-    def person_details(person)                  #person object passed in as the argument when called in the choose_person
+    def person_details(person)                  
         puts ""
         puts "------------------------------------------------------------------"
         puts "PROFILE".colorize(:red)
