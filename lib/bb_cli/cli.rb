@@ -4,8 +4,8 @@ class CLI
         chemistry_image
         API.get_data
         puts "Welcome to the Braking Bad Character Application!".colorize(:red)
-        puts "Would you like to see a list of characters Breaking Bad?".colorize(:red)
-        puts "Type 'yes' to see list, type 'exit' to exit.".colorize(:red)
+        puts "Would you like to see a list of characters from Breaking Bad?".colorize(:red)
+        puts "Type 'yes' to see the list, type 'exit' to exit.".colorize(:red)
         menu
     end
 
@@ -44,7 +44,7 @@ class CLI
 
     def choose_person
         puts ""
-        puts "'Say my name' - Walter White"
+        puts "'Say my name!' - Walter White"
         puts ""
         puts "Enter the name or number of the character on the list to read their profile"
         person_choice = input 
