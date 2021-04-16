@@ -5,7 +5,8 @@ class Person
     def initialize(person_hash)
         person_hash.each do |key, value|
             self.class.attr_accessor(key)
-            self.send("#{key}=", value) if self.respond_to?("#{key}=")  
+            self.send("#{key}=", value) 
+            binding.pry
         end
             save
     end
