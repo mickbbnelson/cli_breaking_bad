@@ -75,7 +75,7 @@ class CLI
         puts "type list to go back to the list of characters, type exit to exit."
         menu
     end
-
+    
     def chemistry_image
         puts <<-'EOF'.colorize(:green)
 
@@ -101,5 +101,4 @@ class CLI
       
       EOF
     end
-
 end
